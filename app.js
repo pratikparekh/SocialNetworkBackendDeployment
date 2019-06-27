@@ -39,13 +39,13 @@ app.use(expressValidator());
 app.use(cors());
 //app.use(myOwnMiddleware);
 
-app.use("/",postRoutes);
-app.use("/",authRoutes);
-app.use("/",userRoutes);
+app.use("/api",postRoutes);
+app.use("/api",authRoutes);
+app.use("/api",userRoutes);
 
 //api docs
 
-app.get("/",(req,res)=>{
+app.get("/api",(req,res)=>{
 
 	fs.readFile('docs/apiDocs.json',(err,data)=>{
 		if(err){
